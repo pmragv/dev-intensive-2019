@@ -213,7 +213,15 @@
     :cond_a
     const/4 v1, 0x0
 
+<<<<<<<
     invoke-virtual {v1, p2}, Landroid/widget/ImageView;->setVisibility(I)V
+=======
+<<<<<<< HEAD
+    invoke-direct {p4, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+=======
+    invoke-virtual {p2, v4}, Landroid/widget/ImageView;->setVisibility(I)V
+>>>>>>> hometask_2
+>>>>>>>
 
     const/4 v2, 0x0
 
