@@ -1,0 +1,228 @@
+.method public static setCallLogTypeIcon(Landroid/content/Context;IILandroid/widget/ImageView;)V
+    .locals 5
+
+    const v3, 0x7f070146  # str - description_call_log_incoming_call
+
+    const v1, 0x7f0200e8  # drw - dialer_ic_call_log_header_incoming_call
+
+    const/4 v2, 0x1
+
+    if-nez p3, :cond_0   не равно 0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    packed-switch p1, :pswitch_data_0
+
+    const/16 v1, 0x0
+
+    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    :goto_1
+    if-eq p1, v2, :cond_1  если равны
+
+    const/4 v1, 0x3
+
+    if-eq p1, v1, :cond_1
+
+    const/4 v1, 0x5
+
+    if-ne p1, v1, :cond_9  если не равны
+
+    :cond_1
+    if-eq p2, v2, :cond_9
+
+    goto :goto_0
+
+    :pswitch_0
+    if-ne p2, v2, :cond_3
+
+    const v1, 0x7f0200eb   # drw - dialer_ic_call_log_header_missed_forwarding_call
+
+    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    const-string v4, "user_colors"
+
+    invoke-static {v4}, Landroid/preference/SettingsHelper;->getIntofSettings(Ljava/lang/String;)I
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    const/4 v4, 0x5
+
+    invoke-static {p3, v4}, Lcom/android/contacts/ContactsUtils;->setColorInOut(Landroid/widget/ImageView;I)V
+
+    :cond_2
+    const v1, 0x7f070149   # str - description_call_log_missed_forwarding_call
+
+    invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    goto :goto_1
+
+    :cond_3
+    const v1, 0x7f0200ea   # drw - dialer_ic_call_log_header_missed_call
+
+    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    const-string v4, "user_colors"
+
+    invoke-static {v4}, Landroid/preference/SettingsHelper;->getIntofSettings(Ljava/lang/String;)I
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    const/4 v4, 0x4
+
+    invoke-static {p3, v4}, Lcom/android/contacts/ContactsUtils;->setColorInOut(Landroid/widget/ImageView;I)V
+
+    :cond_4
+    const v1, 0x7f070148   # str - description_call_log_missed_call
+
+    invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    goto :goto_1
+
+    :pswitch_1
+    if-ne p2, v2, :cond_6
+
+    const v1, 0x7f0200e9   # drw - dialer_ic_call_log_header_incoming_forwarding_call
+
+    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    const-string v4, "user_colors"
+
+    invoke-static {v4}, Landroid/preference/SettingsHelper;->getIntofSettings(Ljava/lang/String;)I
+
+    move-result v4
+
+    if-eqz v4, :cond_5
+
+    const/4 v4, 0x2
+
+    invoke-static {p3, v4}, Lcom/android/contacts/ContactsUtils;->setColorInOut(Landroid/widget/ImageView;I)V
+
+    :cond_5
+    const v1, 0x7f070147   # str - description_call_log_incoming_forwarding_call
+
+    invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    goto :goto_1
+
+    :cond_6
+    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    const-string v4, "user_colors"
+
+    invoke-static {v4}, Landroid/preference/SettingsHelper;->getIntofSettings(Ljava/lang/String;)I
+
+    move-result v4
+
+    if-eqz v4, :cond_7
+
+    const/4 v4, 0x1
+
+    invoke-static {p3, v4}, Lcom/android/contacts/ContactsUtils;->setColorInOut(Landroid/widget/ImageView;I)V
+
+    :cond_7
+    invoke-virtual {p0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    goto :goto_1
+
+    :pswitch_2
+    const v1, 0x7f0200ed  # drw - dialer_ic_call_log_header_outgoing_call
+
+    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    const-string v4, "user_colors"
+
+    invoke-static {v4}, Landroid/preference/SettingsHelper;->getIntofSettings(Ljava/lang/String;)I
+
+    move-result v4
+
+    if-eqz v4, :cond_8
+
+    const/4 v4, 0x3
+
+    invoke-static {p3, v4}, Lcom/android/contacts/ContactsUtils;->setColorInOut(Landroid/widget/ImageView;I)V
+
+    :cond_8
+    const v1, 0x7f07014b   # str - description_call_log_outgoing_call
+
+    invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    goto/16 :goto_1
+
+    :pswitch_3
+    const v1, 0x7f0200ee   # drw - dialer_ic_call_log_header_voicemail
+
+    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    const v1, 0x7f07014e  # drw - description_call_log_voicemail
+
+    invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    goto/16 :goto_1
+
+    :pswitch_4
+    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    invoke-virtual {p0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    goto/16 :goto_1
+
+    :cond_9
+    invoke-virtual {p3}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_a
+
+    invoke-virtual {v0, v2}, Landroid/graphics/drawable/Drawable;->setAutoMirrored(Z)V
+
+    :cond_a
+    const/4 v1, 0x0
+
+    invoke-virtual {p2, v4}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    goto/16 :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_2
+        :pswitch_0
+        :pswitch_3
+        :pswitch_4
+    .end packed-switch
+.end method
